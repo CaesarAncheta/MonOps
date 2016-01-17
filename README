@@ -1,0 +1,76 @@
+    [MonOps picture]
+    Now translate MonOps graphic to ASCII art.
+
+    vertical dimension is time
+    horizontal dimension denote Op cases, each using some resource of the environment
+    [tagname] denotes a monitor state
+
+          [Terminal nodes]
+    *         process starts. Forks of new Ops are imminent.
+    ...       comment, for a specific Op feature
+    o         feature associated with a comment
+    x         exception occurs for a specific Op in stream
+    .         this. The hotspot. The 'punctum' of Barthe's Camera Lucida
+
+          [streams of development, evolution]
+    |  \  /   any of these tokens denote a code stream, each for a specific Op in stream
+
+
+    *         [Op0 -Mainstream Operation]
+    o
+    |
+    |
+    |
+    |
+    |
+    |
+    |
+    |
+    |
+    o         ...base case. Return code 0. No exceptions.
+
+
+    *         [Op1 -Mainstream Operation with one fork]
+    o
+    |\
+    | \
+    |  \
+    |   \
+    |    \
+    |     \
+    |      \
+    |       \
+    |        \
+    o         o ... Op's base case. Op returned with no exceptions.
+
+
+    *         [Op2 -Operation with one exception]
+    o
+    |\
+    | x       ...exception occurs
+    | |\
+    | | \
+    | |  \
+    | |   \
+    | |    \
+    | |     \
+    | |      \
+    o o       .  ...Just terminate Op and start debugging.
+      .       ...Exception with successful recovery.
+
+    *         [Op3 -Operation with multiple exceptions]
+    o
+    |\
+    | x       ...exception occurs
+    | |\
+    | | x     ...exception occurs
+    | | |\
+    | | | x   ...exception occurs
+    | | | |\
+    | | | | x ...exception occurs
+    | | | | |\
+    o o o o o .  ...debug the nth exception.
+    .         ...Mainstream operation, no recovery needed
+      .       ...Operation recovered after one Op exception
+        .     ...Operation recovered after two Op exceptions
+            . ...Operation recovered after n exceptions
